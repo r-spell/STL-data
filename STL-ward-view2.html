@@ -11,6 +11,8 @@
 	</head>
 	<body>
     <h1> Look! It's St. Louis!</h1>
+
+	<div id="vis">
         <script type="text/JavaScript">
 
         //Width and height
@@ -19,7 +21,7 @@
 
 
         //Create SVG element
-		    var svg = d3.select("body")
+		    var svg = d3.select("#vis")
     			    	.append("svg")
 					    .attr("width", width)
 					    .attr("height", height);
@@ -28,9 +30,10 @@
         var g = svg.append('g');
 
         var albersProjection = d3.geoAlbers()
-            .scale(38000)
-            .center([6.5,38.4]);
-           // .translate([width /2, height /2]);
+            .scale(85000)
+			.rotate([90.1994,0])
+            .center([0, 38.65])
+			.translate([width /2, height /2]);
 
         //Define default path generator
         var geoPath = d3.geoPath()
@@ -48,5 +51,6 @@
 
 
       </script>
+	</div>
 	</body>
 </html>
